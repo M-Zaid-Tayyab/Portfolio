@@ -13,11 +13,13 @@ function App() {
 
   useEffect(() => {
     setIsLoaded(true);
+    // Apply background color to body
+    document.body.className = 'bg-white dark:bg-gray-900 transition-colors duration-300';
   }, []);
 
   return (
     <ThemeProvider>
-      <div className={`min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`min-h-screen transition-colors duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Header />
         <main>
           <Hero />
