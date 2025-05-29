@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, Star } from 'lucide-react';
+import QuizGPT from '../assets/QuizGPT.png';
+import LoadItUp from '../assets/LoadItUp.jpeg';
 
 type Project = {
   id: number;
@@ -44,76 +46,33 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Fitness Tracker App',
-      description: 'A comprehensive fitness tracking application with workout plans, progress tracking, and social features.',
-      image: 'https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React Native', 'Redux', 'Firebase', 'Maps API'],
-      category: ['mobile', 'health'],
-      link: 'https://example.com/fitness-tracker',
-      github: 'https://github.com/johndoe/fitness-tracker',
+      title: 'QuizGPT',
+      description: 'QuizGPT uses artificial intelligence to generate quizzes based on topics selected by the user. Whether for exam preparation, learning new subjects, or self-assessment, the app dynamically creates relevant questions tailored to the user\'s chosen areas.',
+      image: QuizGPT,
+      tags: ['React Native', 'Expo', 'Firebase', 'OpenAI', 'Node.js', 'Express', 'MongoDB'],
+      category: ['Mobile', 'Education', 'AI'],
+      link: 'https://quizgpt.vercel.app/',
+      github: 'https://github.com/quizgpt',
       featured: true,
     },
     {
       id: 2,
-      title: 'E-commerce Platform',
-      description: 'A full-featured e-commerce mobile application with product discovery, cart management, and secure checkout.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React Native', 'TypeScript', 'Stripe API', 'Redux'],
-      category: ['mobile', 'ecommerce'],
-      link: 'https://example.com/ecommerce-app',
+      title: 'Load It Up - Pass',
+      description: 'Converted a live web app into a fast, reliable mobile app using React Native to help retain mobile users. The project included Cloudflare authentication, multilingual support (German & English), light/dark themes, and QR code generation + scanning. The original dev team struggled with mobile, so I stepped in and delivered a production-ready app in half the expected time. Ideal for businesses looking to go mobile without compromising on quality or speed.',
+      image: LoadItUp,
+      tags: ['React Native', 'TypeScript', 'Redux', 'Cloudflare', 'QR Code', 'Multilingual'],
+      category: ['mobile', 'Logistics'],
+      link: 'https://loaditup.app/',
+      github: 'https://github.com/loaditup-app',
       featured: true,
-    },
-    {
-      id: 3,
-      title: 'Travel Companion',
-      description: 'A travel app that helps users discover destinations, plan itineraries, and book accommodations and activities.',
-      image: 'https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React Native', 'GraphQL', 'Expo', 'Maps'],
-      category: ['mobile', 'travel'],
-      link: 'https://example.com/travel-companion',
-      github: 'https://github.com/johndoe/travel-companion',
-      featured: false,
-    },
-    {
-      id: 4,
-      title: 'Task Management App',
-      description: 'A sleek and intuitive task management application with calendar integration and reminder notifications.',
-      image: 'https://images.pexels.com/photos/6956350/pexels-photo-6956350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React Native', 'Context API', 'Async Storage', 'Notifications'],
-      category: ['mobile', 'productivity'],
-      link: 'https://example.com/task-manager',
-      github: 'https://github.com/johndoe/task-manager',
-      featured: true,
-    },
-    {
-      id: 5,
-      title: 'Food Delivery App',
-      description: 'A food delivery application with real-time order tracking, payment processing, and restaurant discovery.',
-      image: 'https://images.pexels.com/photos/6205791/pexels-photo-6205791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React Native', 'Firebase', 'Maps API', 'Payment Gateway'],
-      category: ['mobile', 'food'],
-      link: 'https://example.com/food-delivery',
-      featured: false,
-    },
-    {
-      id: 6,
-      title: 'Weather Dashboard',
-      description: 'A weather application with 7-day forecasts, location-based weather data, and customizable alerts.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React Native', 'Weather API', 'Geolocation', 'Charts'],
-      category: ['mobile', 'weather'],
-      link: 'https://example.com/weather-app',
-      github: 'https://github.com/johndoe/weather-app',
-      featured: false,
     },
   ];
 
   const categories = [
     { id: 'all', name: 'All Projects' },
-    { id: 'mobile', name: 'Mobile Apps' },
     { id: 'featured', name: 'Featured' },
-    { id: 'ecommerce', name: 'E-commerce' },
-    { id: 'health', name: 'Health & Fitness' },
+    { id: 'education', name: 'Education' },
+    { id: 'ai', name: 'Logistics' },
   ];
 
   const filteredProjects = filter === 'all' 

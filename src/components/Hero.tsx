@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Smartphone, Globe } from 'lucide-react';
+import heroImage from '../assets/img.jpg';
 
 const Hero: React.FC = () => {
   return (
@@ -93,11 +94,11 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <div className="relative mx-auto max-w-md lg:max-w-full">
-              <div className="aspect-w-4 aspect-h-3 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 shadow-xl p-1">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 shadow-xl p-1">
                 <img 
-                  src="https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="Developer coding on laptop" 
-                  className="rounded-xl object-cover"
+                  src={heroImage} 
+                  alt="Developer Image" 
+                  className="rounded-xl object-cover w-full h-full object-[center_20%]"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-500 rounded-full opacity-20"></div>
